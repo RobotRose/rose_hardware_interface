@@ -1,0 +1,34 @@
+cmake_minimum_required (VERSION 2.4.6)
+project(rose_hardware_comm)
+
+find_package(catkin REQUIRED COMPONENTS 
+    roscomm 
+    roscpp
+    rose_common
+    rose_utils
+)
+
+catkin_package(
+    INCLUDE_DIRS 
+    	include
+    LIBRARIES 
+    	rose_hardware_comm
+    CATKIN_DEPENDS 
+        roscomm 
+        roscpp
+        rose_common
+        rose_utils
+    DEPENDS 
+    	roscpp
+)
+
+set(CMAKE_CXX_FLAGS "-std=c++0x -g ") ##! todo OH: remove compiler backup flag
+
+include_directories(include ${catkin_INCLUDE_DIRS})
+
+add_library(hardware_comm SHARED 
+                src/rose_hardware_comm/hardware_comm.cpp 
+                src/serial/serial.cpp
+            )
+
+target_link_libraries(rose_hardware_comm ${catkin_LIBRARIES})

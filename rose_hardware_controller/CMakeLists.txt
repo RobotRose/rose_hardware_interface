@@ -34,4 +34,3 @@ add_library(rose_hardware_controller
 add_dependencies( rose_hardware_controller ${catkin_EXPORTED_TARGETS} ${PROJECT_NAME}_generate_messages_cpp)
 
 target_link_libraries(rose_hardware_controller ${catkin_LIBRARIES})
-
