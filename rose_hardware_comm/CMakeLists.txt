@@ -24,7 +24,8 @@ set(CMAKE_CXX_FLAGS "-std=c++0x -g ") ##! todo OH: remove compiler backup flag
 
 include_directories(include ${catkin_INCLUDE_DIRS})
 
-add_library(hardware_comm SHARED 
+add_library(rose_hardware_comm 
+                SHARED 
                 src/rose_hardware_comm/hardware_comm.cpp 
                 src/serial/serial.cpp
             )
