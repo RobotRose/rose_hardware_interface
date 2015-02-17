@@ -26,8 +26,10 @@ include_directories(include ${catkin_INCLUDE_DIRS})
 
 add_library(rose_hardware_comm 
                 SHARED 
-                src/rose_hardware_comm/hardware_comm.cpp 
-                src/serial/serial.cpp
+                src/hardware_comm.cpp 
+                src/serial.cpp
             )
+
+add_dependencies( rose_hardware_comm ${catkin_EXPORTED_TARGETS} ${PROJECT_NAME}_generate_messages_cpp)
 
 target_link_libraries(rose_hardware_comm ${catkin_LIBRARIES})

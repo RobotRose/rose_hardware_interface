@@ -28,7 +28,7 @@
 #include "rose_hardware_controller/controller_response.hpp"
 #include "rose_hardware_controller/hardware_timer.hpp"
 #include "rose_hardware_comm/hardware_comm.hpp"
-#include "serial/serial.hpp"
+#include "rose_hardware_comm/serial.hpp"
 
 namespace rose21_platform
 {

@@ -12,7 +12,7 @@
 * 
 ***********************************************************************************/
 
-#include "serial/serial.hpp"
+#include "rose_hardware_comm/serial.hpp"
 
 using namespace std;
 
