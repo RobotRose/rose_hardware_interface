@@ -5,7 +5,6 @@ find_package(catkin REQUIRED COMPONENTS
     roscomm 
     roscpp
     rose_common
-    rose_utils
 )
 
 catkin_package(
@@ -17,7 +16,6 @@ catkin_package(
         roscomm 
         roscpp
         rose_common
-        rose_utils
     DEPENDS 
     	roscpp
 )

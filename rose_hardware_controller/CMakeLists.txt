@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(rose21_platform_controller)
+project(rose_hardware_controller)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -9,8 +9,7 @@ find_package(catkin REQUIRED COMPONENTS
 		rose_common
 		rose_conversions
 		rose_hardware_comm
-		rose_hardware_controller
-		rose_utils
+		rose_common
 	)
 
 
@@ -24,8 +23,7 @@ catkin_package(
 	rose_common
 	rose_conversions
 	rose_hardware_comm
-	rose_hardware_controller
-	rose_utils
+	rose_common
  DEPENDS 
 
 )
