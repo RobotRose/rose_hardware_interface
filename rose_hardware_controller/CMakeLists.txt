@@ -6,6 +6,10 @@ project(rose21_platform_controller)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
 		roscpp
+		rose_common
+		rose_conversions
+		rose_hardware_comm
+		rose_hardware_controller
 		rose_utils
 	)
 
@@ -17,6 +21,10 @@ catkin_package(
 
  CATKIN_DEPENDS
 	roscpp
+	rose_common
+	rose_conversions
+	rose_hardware_comm
+	rose_hardware_controller
 	rose_utils
  DEPENDS 
 
