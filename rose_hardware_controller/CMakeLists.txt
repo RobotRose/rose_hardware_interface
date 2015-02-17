@@ -31,11 +31,11 @@ catkin_package(
 include_directories( include ${catkin_INCLUDE_DIRS} )
 
 add_library(rose_hardware_controller 
-								src/rose_hardware_controller/controller_data.cpp
-								src/rose_hardware_controller/controller_command.cpp
-								src/rose_hardware_controller/controller_response.cpp
-								src/rose_hardware_controller/hardware_timer.cpp
-								src/rose_hardware_controller/hardware_controller.cpp)
+								src/controller_data.cpp
+								src/controller_command.cpp
+								src/controller_response.cpp
+								src/hardware_timer.cpp
+								src/hardware_controller.cpp)
 
 add_dependencies( rose_hardware_controller ${catkin_EXPORTED_TARGETS} ${PROJECT_NAME}_generate_messages_cpp)
 
