@@ -17,7 +17,7 @@ catkin_package(
  INCLUDE_DIRS 
  	include
  LIBRARIES 
-
+ 	rose_hardware_controller
  CATKIN_DEPENDS
 	roscpp
 	rose_common
