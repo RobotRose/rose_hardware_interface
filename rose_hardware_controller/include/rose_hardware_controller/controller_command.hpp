@@ -22,8 +22,6 @@
 #include "rose_hardware_controller/controller_data.hpp"
 #include "rose_hardware_controller/controller_response.hpp"
 
-using namespace std;
-
 /**
  * ControllerCommand class
  */
@@ -35,14 +33,14 @@ class ControllerCommand
 		 * Constructor of the ControllerCommand class.
 		 * @param[in] string command, the command string.
 		 */
-		ControllerCommand(string command);
+		ControllerCommand(const std::string& command);
 
 		/**
 		 * Constructor of the ControllerCommand class.
 		 * @param[in] string command, the command string.
 		 * @param[in] ControllerResponse expected_response, the resonse expected to be returned after sending this command.
 		 */		
-		ControllerCommand(string command, ControllerResponse expected_response);
+		ControllerCommand(const std::string& command, ControllerResponse expected_response);
 
 		/**
 		 * Deconstructor of the ControllerCommand class.
@@ -53,7 +51,7 @@ class ControllerCommand
 		 * Gets the string to be send to a controller
 		 * @return A string containing the message to be send to the serialized port.
 		 */	
-		string 					getSerialMessage();
+		std::string 			getSerialMessage();
 
 		/**
 		* Adds a ControllerData instance to the list of data items.
@@ -79,17 +77,17 @@ class ControllerCommand
 		/**
 		 * @return A string representation of the data items contained in this command.
 		 */
-		string 					getSerialDataString();
+		std::string 			getSerialDataString();
 
 		/**
 		 * @return A pretty string of the controller command for printing purposes.
 		 */
-		string 					getPrettyString();
+		std::string 			getPrettyString();
 
 		/**
 		 * @return A pretty string of the dataitems for printing purposes.
 		 */
-		string 					getPrettyData();
+		std::string 			getPrettyData();
 
 		/**
 		 * Set the expected response, the response that is expected after this command is send.
@@ -100,7 +98,7 @@ class ControllerCommand
 		/**
 		 * @return The command string.
 		 */
-		string 					getCommand();
+		std::string 			getCommand();
 
 		/**
 		 * @return The expected response.
@@ -115,7 +113,7 @@ class ControllerCommand
 
 	private:
 
-		string 					command_;
+		std::string 			command_;
 		ControllerResponse 		expected_response_;
 		list<ControllerData>	data_;
 };

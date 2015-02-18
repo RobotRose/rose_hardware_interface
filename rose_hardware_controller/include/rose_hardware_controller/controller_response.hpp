@@ -23,32 +23,30 @@
 
 #define DEFAULT_TIMEOUT			5
 
-using namespace std;
-
 class ControllerResponse
 {
   public:
   	ControllerResponse();
-	ControllerResponse(string response);
-	ControllerResponse(string response, int timeout);
+	ControllerResponse(const std::string& response);
+	ControllerResponse(const std::string& response, int timeout);
 	~ControllerResponse();
 
 	void 					addCharacter(char character);
-	string 					get_response();
-	bool  					set_response(string response);
+	std::string				get_response();
+	bool  					set_response(const std::string& response);
 	int 					get_timeout();
-	string 					get_type();
-	string 					getRawData();
-	string  				getPrettyReceivedData();
-	string  				getPrettyExpectedData();
-	string 					getPrettyString();
+	std::string				get_type();
+	std::string				getRawData();
+	std::string				getPrettyReceivedData();
+	std::string				getPrettyExpectedData();
+	std::string				getPrettyString();
 	bool 					hasData();
 	bool 					addExpectedDataItem(ControllerData data_item);
 	list<ControllerData> 	getExpectedDataItems();
 	list<ControllerData> 	getReceivedDataItems();
   
   private:
-	string 					response_;
+	std::string 					response_;
 	int 					timeout_;
 	list<ControllerData> 	expected_data_;
 };
