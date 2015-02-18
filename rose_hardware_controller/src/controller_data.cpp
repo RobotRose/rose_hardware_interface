@@ -14,7 +14,6 @@
 
 #include "rose_hardware_controller/controller_data.hpp"
 
-using namespace rose21_platform;
 
 // TODO OH: Make templated bool int std::string?
 

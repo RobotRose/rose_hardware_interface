@@ -24,7 +24,6 @@
 #define DEFAULT_TIMEOUT			5
 
 using namespace std;
-using namespace rose21_platform;
 
 class ControllerResponse
 {

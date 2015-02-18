@@ -56,7 +56,6 @@ namespace rose21_platform
 #define HARDWARE_CONTROL_WATCHDOG_RATE              10      // [hz]
 
 using namespace std;
-using namespace rose21_platform;
 
 /**
  * The HardwareController class is a templated class, it gets templated with an interface type which defines 

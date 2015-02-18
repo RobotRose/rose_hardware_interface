@@ -14,7 +14,6 @@
 #include "rose_hardware_controller/controller_command.hpp"
 
 using namespace std;
-using namespace rose21_platform;
 
 ControllerCommand::ControllerCommand(string command)
 	: command_(command)

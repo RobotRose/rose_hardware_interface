@@ -14,7 +14,6 @@
 #include "rose_hardware_controller/controller_response.hpp"
 
 using namespace std;
-using namespace rose21_platform;
 
 ControllerResponse::ControllerResponse()
 	: response_("")
