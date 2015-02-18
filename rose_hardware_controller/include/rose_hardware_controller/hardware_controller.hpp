@@ -30,9 +30,6 @@
 #include "rose_hardware_comm/hardware_comm.hpp"
 #include "rose_hardware_comm/serial.hpp"
 
-namespace rose21_platform
-{
-
 #define ROS_NAME_HC                         (ROS_NAME + "|HC")
 
 // Commands
@@ -746,7 +743,5 @@ template <class InterfaceType> class HardwareController
 
     std::vector<HardwareTimer> timers;
 };
-
-}
 
 #endif // HARDWARE_CONTROLLER_NODE_HPP

@@ -24,8 +24,6 @@
 
 using namespace std;
 
-namespace rose21_platform{
-
 /**
  * ControllerCommand class
  */
@@ -121,6 +119,5 @@ class ControllerCommand
 		ControllerResponse 		expected_response_;
 		list<ControllerData>	data_;
 };
-}
 
 #endif // LIFT_CONTROLLER_COMMAND_HPP

@@ -21,9 +21,6 @@
 #include "rose_common/common.hpp"
 #include "rose_conversions/conversions.hpp"
  
-
-namespace rose21_platform{
-
 /**
  * The ControllerData represents one data item, a number of overridden constructors setting the datafields accordingly.
  * it contains the data value for use in a ControllerCommand and a pointer to a coupled variable for use in a ControllerResponse.
@@ -151,6 +148,5 @@ class ControllerData
   	std::string      error_message_;    
 	
 };
-}
 
 #endif // CONTROLLER_DATA_HPP 
