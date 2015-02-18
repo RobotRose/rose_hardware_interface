@@ -15,12 +15,12 @@
 
 using namespace std;
 
-ControllerCommand::ControllerCommand(string command)
+ControllerCommand::ControllerCommand(const std::string& command)
 	: command_(command)
 	, expected_response_("")
 {}
 
-ControllerCommand::ControllerCommand(string command, ControllerResponse expected_response)
+ControllerCommand::ControllerCommand(const std::string& command, ControllerResponse expected_response)
 	: command_(command)
 	, expected_response_(expected_response)
 {}
@@ -28,7 +28,7 @@ ControllerCommand::ControllerCommand(string command, ControllerResponse expected
 ControllerCommand::~ControllerCommand()
 {}
 
-string ControllerCommand::getSerialMessage()
+std::string ControllerCommand::getSerialMessage()
 {
 	return ("$" + command_ + "," + getSerialDataString() + "\r");
 }
@@ -51,23 +51,23 @@ bool ControllerCommand::addDataItem(const std::string& data_item)
 	return true;
 }
 
-string ControllerCommand::getSerialDataString()
+std::string ControllerCommand::getSerialDataString()
 {
-	string data_string = "";
+	std::string data_string = "";
 	for(auto it = data_.begin(); it != data_.end(); it++)
 		data_string += it->getData() + ",";
 	return data_string;
 }
 
-string ControllerCommand::getPrettyString()
+std::string ControllerCommand::getPrettyString()
 {
-	string pretty_string = "Command: " + command_ + " | Data: " + getPrettyData();
+	std::string pretty_string = "Command: " + command_ + " | Data: " + getPrettyData();
 	return pretty_string;
 }
 
-string ControllerCommand::getPrettyData()
+std::string ControllerCommand::getPrettyData()
 {
-	string pretty_data 		= "(" + rose_conversions::intToString(data_.size()) +"):";
+	std::string pretty_data 		= "(" + rose_conversions::intToString(data_.size()) +"):";
 	for(auto it = data_.begin(); it != data_.end(); it++)
 		pretty_data += it->getPrettyString();
 
@@ -80,7 +80,7 @@ void ControllerCommand::setExpectedResponse(ControllerResponse expected_response
 }
 
 
-string 	ControllerCommand::getCommand()
+std::string ControllerCommand::getCommand()
 {
 	return command_;
 }
@@ -90,7 +90,7 @@ ControllerResponse ControllerCommand::getExpectedResponse()
 	return expected_response_;
 }
 
-list<ControllerData>* ControllerCommand::getDataItems()
+std::list<ControllerData>* ControllerCommand::getDataItems()
 {
 	return &data_;
 }

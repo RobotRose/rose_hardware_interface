@@ -109,13 +109,13 @@ class ControllerCommand
 		 * Gets the list of data items.
 		 * @return A list<ControllerData> containing the data items.
 		 */	
-		list<ControllerData>* 	getDataItems();
+		std::list<ControllerData>* 	getDataItems();
 
 	private:
 
-		std::string 			command_;
-		ControllerResponse 		expected_response_;
-		list<ControllerData>	data_;
+		std::string 				command_;
+		ControllerResponse 			expected_response_;
+		std::list<ControllerData>	data_;
 };
 
 #endif // LIFT_CONTROLLER_COMMAND_HPP

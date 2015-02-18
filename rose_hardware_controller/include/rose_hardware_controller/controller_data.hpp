@@ -40,9 +40,9 @@ class ControllerData
 
     /**
     * ControllerData constructor calling Initialize()
-    * @param[in] std::string data_reference
+    * @param[in] const std::string& data_reference
     */
-    ControllerData(std::string data);
+    ControllerData(const std::string& data);
 
     /**
     * ControllerData constructor calling Initialize()
@@ -53,10 +53,10 @@ class ControllerData
 
     /**
     * ControllerData constructor calling Initialize()
-    * @param[in] std::string data
+    * @param[in] const std::string& data
     * @param[in] std::string error_message
     */
-    ControllerData(std::string data, std::string error_message);
+    ControllerData(const std::string& data, std::string error_message);
 
     /**
     * ControllerData constructor calling Initialize()
@@ -67,10 +67,10 @@ class ControllerData
 
     /**
     * ControllerData constructor calling Initialize()
-    * @param[in] std::string data
+    * @param[in] const std::string& data
     * @param[in] int& data_reference
     */
-    ControllerData(std::string data, int& data_reference);
+    ControllerData(const std::string& data, int& data_reference);
 
     /**
     * ControllerData constructor calling Initialize()
@@ -82,11 +82,11 @@ class ControllerData
 
     /**
     * ControllerData constructor calling Initialize()
-    * @param[in] std::string data
+    * @param[in] const std::string& data
     * @param[in] int& data_reference
     * @param[in] std::string error_message
     */
-    ControllerData(std::string data, int& data_reference, std::string error_message);
+    ControllerData(const std::string& data, int& data_reference, std::string error_message);
 
     /**
     * Deconstructor of the ControllerData class
@@ -95,18 +95,18 @@ class ControllerData
 
      /**
     * Initializes the data item, this is called from all constructors
-    * @param[in] std::string data
+    * @param[in] const std::string& data
     * @param[in] std::string error_message
     */
-    void     Initialize(std::string data, std::string error_message);
+    void     Initialize(const std::string& data, std::string error_message);
 
     /**
     * Initializes the data item, this is called from all constructors
-    * @param[in] std::string data
+    * @param[in] const std::string& data
     * @param[in] int& data_reference
     * @param[in] std::string error_message
     */
-    void     Initialize(std::string data, int& data_reference, std::string error_message);
+    void     Initialize(const std::string& data, int& data_reference, std::string error_message);
 
     /**
     * @return The stringalized data item

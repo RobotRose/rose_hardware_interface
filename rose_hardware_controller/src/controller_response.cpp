@@ -20,12 +20,12 @@ ControllerResponse::ControllerResponse()
 	, timeout_(0)
 {}
 
-ControllerResponse::ControllerResponse(string response)
+ControllerResponse::ControllerResponse(const std::string& response)
 	: response_(response)
 	, timeout_(DEFAULT_TIMEOUT)
 {}
 
-ControllerResponse::ControllerResponse(string response, int timeout)
+ControllerResponse::ControllerResponse(const std::string& response, int timeout)
 	: response_(response)
 	, timeout_(timeout)
 {}
@@ -38,12 +38,12 @@ void ControllerResponse::addCharacter(char character)
 	response_ = response_ + character;
 }
 
-string ControllerResponse::get_response()
+std::string ControllerResponse::get_response()
 {
 	return response_;
 }
 
-bool ControllerResponse::set_response(string response)
+bool ControllerResponse::set_response(const std::string& response)
 {
 	response_ = response;
 	return true;
@@ -54,7 +54,7 @@ int ControllerResponse::get_timeout()
 	return timeout_;
 }
 
-string ControllerResponse::get_type()
+std::string ControllerResponse::get_type()
 {
 	// Get the part of the string after the first comma and before the second
     int comma_pos = response_.find(",");
@@ -67,7 +67,7 @@ string ControllerResponse::get_type()
 
 
 
-string ControllerResponse::getRawData()
+std::string ControllerResponse::getRawData()
 {
 	// Get the part of the string behind the first comma if there is one
     int comma_pos = response_.find(",");
@@ -79,10 +79,10 @@ string ControllerResponse::getRawData()
 
 }
 
-string ControllerResponse::getPrettyReceivedData()
+std::string ControllerResponse::getPrettyReceivedData()
 {
-	list<ControllerData> data_items = getReceivedDataItems();
-	string pretty_data 		= "(" + rose_conversions::intToString(data_items.size()) +"):";	
+	std::list<ControllerData> data_items = getReceivedDataItems();
+	std::string pretty_data 		= "(" + rose_conversions::intToString(data_items.size()) +"):";	
 	
 	for(auto it = data_items.begin(); it != data_items.end(); it++)
 		pretty_data += it->getPrettyString();
@@ -90,10 +90,10 @@ string ControllerResponse::getPrettyReceivedData()
 	return pretty_data;
 }
 
-string ControllerResponse::getPrettyExpectedData()
+std::string ControllerResponse::getPrettyExpectedData()
 {
-	list<ControllerData> data_items = getExpectedDataItems();
-	string pretty_data 		= "(" + rose_conversions::intToString(data_items.size()) +"):";	
+	std::list<ControllerData> data_items = getExpectedDataItems();
+	std::string pretty_data 		= "(" + rose_conversions::intToString(data_items.size()) +"):";	
 	
 	for(auto it = data_items.begin(); it != data_items.end(); it++)
 		pretty_data += it->getPrettyString();
@@ -101,9 +101,9 @@ string ControllerResponse::getPrettyExpectedData()
 	return pretty_data;
 }
 
-string ControllerResponse::getPrettyString()
+std::string ControllerResponse::getPrettyString()
 {
-	string pretty_string = "Type: " + get_type() + " | Expected Data: " + getPrettyExpectedData() + " | Received Data: " + getPrettyReceivedData();
+	std::string pretty_string = "Type: " + get_type() + " | Expected Data: " + getPrettyExpectedData() + " | Received Data: " + getPrettyReceivedData();
 	return pretty_string;
 }
 
@@ -121,21 +121,21 @@ bool ControllerResponse::addExpectedDataItem(ControllerData data_item)
 	return true;
 }
 
-list<ControllerData> ControllerResponse::getExpectedDataItems()
+std::list<ControllerData> ControllerResponse::getExpectedDataItems()
 {
 	return expected_data_;
 }
 
-list<ControllerData> ControllerResponse::getReceivedDataItems()
+std::list<ControllerData> ControllerResponse::getReceivedDataItems()
 {
-	list<ControllerData> dataItems;					//! @todo OH list<ControllerData>
+	std::list<ControllerData> dataItems;					//! @todo OH std::list<ControllerData>
 	if(hasData())
 	{
-		string raw_data 	= getRawData();
+		std::string raw_data 	= getRawData();
 		while(raw_data != "")
 		{
 			int comma_pos = raw_data.find(",");			
-			if(comma_pos == string::npos)
+			if(comma_pos == std::string::npos)
 				break;
 
 			dataItems.push_back(ControllerData(raw_data.substr(0, comma_pos)));
